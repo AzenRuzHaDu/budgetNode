@@ -12,6 +12,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +29,7 @@ import lombok.ToString;
 @Setter
 @EqualsAndHashCode
 @ToString
-@Inheritance (strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
 public class ParentNode {
 
     @Id
@@ -39,6 +41,7 @@ public class ParentNode {
     private String color = "#CECECE";
     private float montant = 2000F; 
     @OneToMany(mappedBy="parentNode", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Node> children;  
     
 }
