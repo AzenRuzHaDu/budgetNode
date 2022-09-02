@@ -5,13 +5,14 @@ import javax.persistence.ManyToOne;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-// @NoArgsConstructor
+@NoArgsConstructor
 @RequiredArgsConstructor
 @Getter
 @Setter
@@ -20,22 +21,12 @@ import lombok.ToString;
 public class Node extends ParentNode {
 
 
-    private float percentage = 100.0F; 
+    private float percentage; 
     @NonNull
     @ManyToOne
     private ParentNode parentNode;
    
-    public Node() {
-    this.parentNode = new ParentNode();
-        ammountSetter();
-    } 
-
-    // TODO: AvantProd : passer cette fonction dans la couche service, on le garde dans la 
-    // classe métier pour le dev
-    private void ammountSetter (){
-        float montant = (this.getParentNode().getMontant() * this.getPercentage()) / 100.0F;
-        this.setMontant(montant);
-    } 
+  
     
     
 }

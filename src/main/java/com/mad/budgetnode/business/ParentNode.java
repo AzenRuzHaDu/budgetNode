@@ -36,8 +36,8 @@ public class ParentNode {
     @NonNull
     private String name;
     @NonNull
-    private String color;
-    private float montant = 100.0F; 
+    private String color = "#CECECE";
+    private float montant = 2000F; 
     @OneToMany(mappedBy="parentNode", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Node> children;  
     
