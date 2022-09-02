@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mad</groupId>
-	<artifactId>budgetNode</artifactId>
+	<artifactId>budgetnode</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>budgetNode</name>
+	<name>budgetnode</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>

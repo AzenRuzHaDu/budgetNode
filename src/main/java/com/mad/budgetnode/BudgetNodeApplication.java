@@ -1,4 +1,4 @@
-package com.mad.budgetNode;
+package com.mad.budgetnode;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
