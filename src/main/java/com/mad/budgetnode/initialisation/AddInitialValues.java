@@ -53,8 +53,17 @@ public class AddInitialValues implements CommandLineRunner {
                 nodePersistance.save(n);
                 i -= 20; 
             }
+
         }
 
+        ParentNode pn = parentNodePersistance.findById(5L).orElse(null);  
+
+        Node n = new Node();
+        n.setName("test");
+        n.setPercentage(5);
+        n.setParentNode(pn);
+        n.setMontant((n.getParentNode().getMontant() * n.getPercentage()) / 100);
+        nodePersistance.save(n);
     }
 
 }

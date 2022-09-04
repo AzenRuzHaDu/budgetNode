@@ -3,6 +3,8 @@ package com.mad.budgetnode.business;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ public class Node extends ParentNode {
     private float percentage; 
     @NonNull
     @ManyToOne
+    @JsonIgnore
     private ParentNode parentNode;
    
   

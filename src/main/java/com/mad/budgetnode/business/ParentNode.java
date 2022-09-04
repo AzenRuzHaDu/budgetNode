@@ -41,7 +41,6 @@ public class ParentNode {
     private String color = "#CECECE";
     private float montant = 2000F; 
     @OneToMany(mappedBy="parentNode", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Node> children;  
     
 }

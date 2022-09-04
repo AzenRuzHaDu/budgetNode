@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.mad.budgetnode.business.Node;
 import com.mad.budgetnode.business.ParentNode;
 import com.mad.budgetnode.persistance.ParentNodePersistance;
 import com.mad.budgetnode.service.ParentNodeService;
@@ -26,5 +27,13 @@ private ParentNodePersistance parentNodePersistance;
         parentNodePersistance.save(parentnode); 
         return parentnode; 
     }
+
+    @Override
+    public ParentNode getNodeById(Long nodeId) {
+        
+        return parentNodePersistance.findById(nodeId).orElse(null);
+    }
+
+    
     
 }
