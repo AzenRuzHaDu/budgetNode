@@ -2,7 +2,6 @@ package com.mad.budgetnode.service;
 
 import java.util.List;
 
-import com.mad.budgetnode.business.Node;
 import com.mad.budgetnode.business.ParentNode;
 
 public interface ParentNodeService {
