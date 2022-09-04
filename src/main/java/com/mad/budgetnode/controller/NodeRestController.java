@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,19 +24,23 @@ import lombok.AllArgsConstructor;
 public class NodeRestController {
 
     private final ParentNodeService parentNodeService;
-    private final NodeService nodeService;
-    
+
     @GetMapping("Nodes")
     public List<ParentNode> getNodes() {
 
         List<ParentNode> result = new ArrayList<>();
 
-        for (ParentNode n : parentNodeService.getParentNodes()){
-            if (!(n instanceof Node)){
-                result.add(n); 
+        for (ParentNode n : parentNodeService.getParentNodes()) {
+            if (!(n instanceof Node)) {
+                result.add(n);
             }
         }
         return result;
+    }
+
+    @DeleteMapping("Node/{id}")
+    public boolean nodeDelete(@PathVariable final Long id){
+        return parentNodeService.deleteParentNode(id); 
     }
 
 }

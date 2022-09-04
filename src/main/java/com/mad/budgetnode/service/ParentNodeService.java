@@ -12,6 +12,8 @@ public interface ParentNodeService {
 
     public ParentNode addNode(ParentNode parentnode);
 
-    public ParentNode getNodeById(Long nodeId); 
+    public ParentNode getNodeById(Long nodeId);
+
+    public boolean deleteParentNode(Long id); 
 
 }
